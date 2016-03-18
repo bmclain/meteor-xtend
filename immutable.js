@@ -1,19 +1,25 @@
-module.exports = extend
+(function () {
+    var hasOwnProperty = Object.prototype.hasOwnProperty;
 
-var hasOwnProperty = Object.prototype.hasOwnProperty;
+    var _extend = function() {
+        var target = {}
 
-function extend() {
-    var target = {}
+        for (var i = 0; i < arguments.length; i++) {
+            var source = arguments[i]
 
-    for (var i = 0; i < arguments.length; i++) {
-        var source = arguments[i]
-
-        for (var key in source) {
-            if (hasOwnProperty.call(source, key)) {
-                target[key] = source[key]
+            for (var key in source) {
+                if (hasOwnProperty.call(source, key)) {
+                    target[key] = source[key]
+                }
             }
         }
+        return target
     }
-
-    return target
-}
+    if (typeof Package !== 'undefined') {
+        extend = _extend;
+    } else if (typeof module !== 'undefined' && module.exports) {
+        module.exports = _extend;
+    } else {
+        root.extend = _extend;
+    }
+}());
