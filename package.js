@@ -2,7 +2,7 @@ Package.describe({
   name: 'bmclain:xtend',
   version: '4.0.1',
   // Brief, one-line summary of the package.
-  summary: 'xtend is a basic utility library which allows you to extend an object by appending all of the properties from each object in a list.',
+  summary: 'A utility library that allows you to apppend the properties of each object in a list.',
   // URL to the Git repository containing the source code for this package.
   git: 'https://github.com/bmclain/meteor-xtend',
   // By default, Meteor will default to using README.md for documentation.
